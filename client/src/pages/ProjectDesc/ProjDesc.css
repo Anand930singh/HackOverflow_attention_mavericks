@@ -44,7 +44,10 @@
     scrollbar-width: thin;
     scrollbar-color: #999999 #f0f0f0;
 }
+
 .addComments{  
+    /* flex:40%; */
+    width:31rem;
     display:flex;
     flex-direction: column;
     justify-content: left;
@@ -56,4 +59,24 @@
     padding-left: 1rem;
     background-color: white;
     border: 1px solid white;
+}
+.addSeeComments{
+    display: flex;
+    flex-direction: row;
+    column-gap: 1rem;
+}
+.seeComments{
+    /* border-left:1px solid rgb(190, 189, 189);
+    padding-left:0.5rem; */
+
+}
+
+@media (max-width: 800px) {
+    .addSeeComments{
+        flex-direction: column;
+    }
+    .addComments{
+        margin-bottom: 1.5rem;
+        width:auto;
+    }
 }
