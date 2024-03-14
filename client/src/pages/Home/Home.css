@@ -1,0 +1,48 @@
+.homeBody{
+    width:100vw;
+    margin-top:1rem;
+    display: flex;
+    flex-direction: row;
+
+}
+.leftHomeBody{
+    height:100px;
+    flex:82%;
+    border:1px solid green;
+    display:flex;
+    flex-direction: column;
+    padding:1rem 1rem 0rem 3rem;
+    row-gap: 1rem;
+}
+.rightHomeBody{
+    border-left: 2px solid grey;
+    flex:18%;
+    display:flex;
+    justify-content: center;
+}
+.addProjectContainer{
+    display: flex;
+    height:16rem;
+    width:13rem;
+    /* border:1px solid black; */
+    border-radius:10px;
+    box-shadow: 1px 2px 3px 4px rgba(12,12,12,0.2);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.newProj{
+    font-weight:700;
+}
+@media (max-width: 800px) {
+    .homeBody {
+      flex-direction: column;
+    }
+    .rightHomeBody{
+        order: -1;
+    }
+    .addProjectContainer{
+        width:95vw;
+        height:9rem;
+    }
+  }
