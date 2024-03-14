@@ -5,7 +5,7 @@ function ProjectCard() {
     return (
         <div className='projectCardContainer'>
             <div className='imgProjCard'>
-                <img src="https://sabarmatiriverfront.com/wp-content/uploads/2022/08/Foot-Over-Bridge.jpeg" alt="image not available" />
+                <img src="https://sabarmatiriverfront.com/wp-content/uploads/2022/08/Foot-Over-Bridge.jpeg" alt="not available" />
             </div>
             <div className='projectDesHead'>
                 <div className='projHead'>Heading About Project</div>

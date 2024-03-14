@@ -1,10 +1,18 @@
+  .formContainer{
+    width:100%;
+    background-color: rgb(243, 243, 243);
+    display: flex;
+    justify-content: center;
+    padding: 1rem 0rem;
+  }
   .pr_form-container {
     max-width: 500px;
-    margin: 2rem auto;
     padding: 20px;
+    display:flex;
+    flex-direction: column;
     border-radius: 5px;
-    background: linear-gradient(180deg, rgb(159, 238, 237), #e1ffea22 60%);
-    box-shadow: 0.5rem 0.5rem 0.5rem rgba(67, 235, 247, 0.411);
+    background-color:white;
+    box-shadow: 1px 2px 3px 4px rgba(206, 208, 208, 0.2);
   }
   
   .pr_form-container h2{

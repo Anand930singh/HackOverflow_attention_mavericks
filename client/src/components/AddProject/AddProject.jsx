@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import './Project.css';
+import './AddProject.css';
 
-const Project = () => {
+const AddProject = () => {
   const [image, setImage] = useState(null);
   const [formData, setFormData] = useState({
     projectName: '',
@@ -31,6 +31,7 @@ const Project = () => {
   };
 
   return (
+    <div className='formContainer'>
     <div className="pr_form-container">
       <h2>Add New Project</h2>
       <form onSubmit={handleSubmit}>
@@ -74,7 +75,8 @@ const Project = () => {
         <button type="submit">Add Project</button>
       </form>
     </div>
+    </div>
   );
 }
 
-export default Project;
+export default AddProject;
