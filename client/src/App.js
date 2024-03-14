@@ -6,6 +6,7 @@ import Navbar from './components/Navbar/Navbar'
 import AddProject from './components/AddProject/AddProject';
 import ProjDesc from "./pages/ProjectDesc/ProjDesc";
 
+
 function App() {
   return (
     <div className="App">

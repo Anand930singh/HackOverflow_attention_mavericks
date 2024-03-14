@@ -1,0 +1,58 @@
+.comment {
+    max-width: 600px;
+    border: 1px solid #0e0d0d;
+    border-radius: 5px;
+    margin: 0 auto;
+    margin-top: 2rem;
+    padding: 10px;
+    align-items: center;
+    
+
+  }
+  
+  .user-info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+  }
+  
+  .user-icon {
+    margin-right: 5px;
+  }
+  
+  .username {
+    font-weight: bold;
+    margin-right: 5px;
+  }
+  
+  .timestamp {
+    color: #888;
+    font-size: 0.8em;
+    margin-left: auto;
+  }
+  
+  .comment-content {
+    margin-bottom: 5px;
+  }
+  
+  .comment-actions {
+    display: flex;
+  }
+  
+  .edit-comment,
+  .delete-comment {
+    border: none;
+    background: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    color: #555;
+    margin-right: 10px;
+  }
+  
+  .edit-comment:hover,
+  .delete-comment:hover {
+    color: #333;
+  }
+  
+  
