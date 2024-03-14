@@ -6,6 +6,7 @@ import Navbar from './components/Navbar/Navbar'
 import Project from './components/Project/Project';
 import Comments from './components/Comments/Comments';
 
+
 function App() {
   return (
     <div className="App">
