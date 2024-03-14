@@ -2,13 +2,13 @@
     width:100vw;
     margin-top:1rem;
     display: flex;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
     flex-direction: row;
-
+    background-color: rgb(243, 243, 243);
 }
 .leftHomeBody{
-    height:100px;
     flex:82%;
-    border:1px solid green;
     display:flex;
     flex-direction: column;
     padding:1rem 1rem 0rem 3rem;
