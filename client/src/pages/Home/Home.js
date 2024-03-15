@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import './Home.css';
 import { CiBookmarkPlus } from "react-icons/ci";
-import Cookies from 'js-cookie';
 import ProjectCard from '../../components/ProjectCards/ProjectCard';
 
 function Home() {
