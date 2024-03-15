@@ -53,7 +53,7 @@ app.post('/auth/signin', async(req,res)=>{
 })
 
 app.post('/project/add', async(req,res)=>{
-    const body: AddProjectDto= req.body;
+    const body: AddProjectDto= req.body.formData;
     const project = await ProjectSevice.addProject(body)
     res.json(project);
 })
