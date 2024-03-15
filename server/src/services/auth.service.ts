@@ -16,8 +16,17 @@ export class AuthService{
     }
 
     static async signIn(body:LoginUserDto):Promise<any>{
+        if (!body) {
+          return {
+              status: 400,
+              data: {
+                  message: "Request body is undefined",
+              },
+        };
+      }
         const myDataSource=AppSataSource;
         const user= await myDataSource.getRepository(User).findOne({where:{email:body.email}});
+        console.log(body.email)
         if(user)
         {
           const isMatch = await bcrypt.compare(body.password, user.password);

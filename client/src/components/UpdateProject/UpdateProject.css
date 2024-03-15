@@ -1,7 +1,7 @@
 
   .pr_form-container {
-    max-width: 500px;
-
+    width: auto;
+    height: auto;
     padding: 1rem 2rem 1rem 1rem;
     display:flex;
     flex-direction: column;
