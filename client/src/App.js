@@ -16,7 +16,7 @@ function App() {
           <Route path='/loginSignup' element={<LoginSignup />} />
           <Route exact path="/home" element={<Home />} />
           <Route path='/addProj' element={<AddProject />} />
-          <Route path='/projDesc' element={<ProjDesc />} />
+          <Route path='/projDesc/:id' element={<ProjDesc />} />
         </Routes>
       </BrowserRouter>
     </div>

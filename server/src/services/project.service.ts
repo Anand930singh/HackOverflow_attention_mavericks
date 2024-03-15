@@ -7,7 +7,6 @@ export class ProjectSevice{
     private static projectRepository:Repository<Projects>;
 
     static async addProject(body:AddProjectDto):Promise<any>{
-        console.log('hii')
         const myDataSource= AppSataSource;
         const userRepository=myDataSource.getRepository(Projects);
         const project = userRepository.create(body)
@@ -18,5 +17,12 @@ export class ProjectSevice{
         const myDataSource= AppSataSource;
         const projects = await myDataSource.getRepository(Projects).find();
         return projects;
+    }
+
+    static async getProjectById(id:string):Promise<any>{
+        const myDataSource = AppSataSource;
+        const userRepository= myDataSource.getRepository(Projects);
+        const project = userRepository.findOne({ where: { id: id } });
+        return project;
     }
 }

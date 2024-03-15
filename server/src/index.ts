@@ -63,10 +63,24 @@ app.get('/project/getProjects', async(req,res)=>{
     res.json(project)
 })
 
+app.post('/project/getById', async(req,res)=>{
+    const id=req.body.id;
+    const project = await ProjectSevice.getProjectById(id)
+    res.json(project);
+})
+
 app.post('/comments/add',async(req,res)=>{
     const body: AddComentDto=req.body;
+    console.log(body)
     const comment = await CommentService.addComment(body)
     res.json({status:200, message:"SUCCESS"})
+})
+
+app.post('/comments/getById',async(req,res)=>{
+    const id =req.body.id;
+    console.log(id)
+    const comments = await CommentService.getCommentsById(id);
+    res.json(comments);
 })
 
 app.listen(PORT, async () => {
