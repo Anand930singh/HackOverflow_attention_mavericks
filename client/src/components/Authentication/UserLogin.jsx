@@ -9,7 +9,7 @@ function UserLogin() {
   const [formData, setFormData] = useState({
     email: '',
     password: '',
-    type:0
+    type: 0
   });
 
   const handleChange = (e) => {
@@ -18,31 +18,31 @@ function UserLogin() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    
+    if (formData.email.trim() !== '' && formData.password.trim() !== '') {
+      handelUserLogin();
+    } else {
+      alert('Please fill in all fields.');
+    }
   };
 
   const handleShowSignup = () => {
-    setShowSignup(true); 
-    setShowLogin(false); 
-    
+    setShowSignup(true);
+    setShowLogin(false);
   };
 
-  const handelUserLogin=async()=>{
-    const response= await fetch('http://localhost:8050/auth/signin',{
-      method:"POST",
-      body:JSON.stringify({
-        formData
-      }),
-      headers:{"Content-type":"application/json"},
-    })
-    const json=await response.json();
-    if(json)
-    {
+  const handelUserLogin = async () => {
+    const response = await fetch('http://localhost:8050/auth/signin', {
+      method: "POST",
+      body: JSON.stringify(formData), // Send formData directly
+      headers: { "Content-type": "application/json" },
+    });
+    const json = await response.json();
+    if (json) {
       const userData = { userId: json.data.userId, type: json.data.type };
-      localStorage.setItem('userData',JSON.stringify(userData))
+      localStorage.setItem('userData', JSON.stringify(userData));
       navigate('/home');
     }
-  }
+  };
 
   return (
     <div className="form-container">
@@ -66,13 +66,14 @@ function UserLogin() {
               onChange={handleChange}
               required
             />
-            <button type="submit" onClick={(e)=>handelUserLogin(e.target.value)}>Login</button>
+            <button type="submit">Login</button>
           </form>
           <h4>Don't have an account? <button onClick={handleShowSignup}>Signup Here</button></h4>
         </>
-      )} 
+      )}
       {showSignup && <UserSignup />}
     </div>
   );
 }
+
 export default UserLogin;
