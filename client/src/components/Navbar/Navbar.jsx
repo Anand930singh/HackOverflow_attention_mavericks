@@ -25,10 +25,10 @@ const Navbar = () => {
                 <li onClick={() => { setMenu("home") }}><Link style={{textDecoration:'none'}}to='/home'>Home </Link>{menu === "home" ? <hr /> : <></>}</li>
                 <li onClick={() => { setMenu("hacker2") }}><Link style={{textDecoration:'none'}} to='/hacker2 '>Hacker2</Link> {menu === "hacker2" ? <hr /> : <></>}</li>
             </ul>
-            <div className='nav-login'>
-                <Link to='/loginSignup'><button>Login</button></Link>
+            {/* <div className='nav-login'>
+                <Link to='/'><button>Login</button></Link>
                 
-            </div>
+            </div> */}
         </div>
     )
 }
