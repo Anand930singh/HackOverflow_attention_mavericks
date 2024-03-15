@@ -40,33 +40,33 @@ async function connectDB() {
         .catch((e) => console.log(e));
 }
 
-app.post('/auth/signup', async(req,res)=>{
+app.post('/auth/signup', async (req, res) => {
     const userData: UserRegistrationDto = req.body;
     const newUSer = await AuthService.signUp(userData);
     res.json(newUSer);
 })
 
-app.post('/auth/signin', async(req,res)=>{
-    const userData: LoginUserDto= req.body;
+app.post('/auth/signin', async (req, res) => {
+    const userData: LoginUserDto = req.body;
     const newUser = await AuthService.signIn(userData)
     res.json(newUser);
 })
 
-app.post('/project/add', async(req,res)=>{
-    const body: AddProjectDto= req.body;
+app.post('/project/add', async (req, res) => {
+    const body: AddProjectDto = req.body;
     const project = await ProjectSevice.addProject(body)
     res.json(project);
 })
 
-app.get('/project/getProjects', async(req,res)=>{
+app.get('/project/getProjects', async (req, res) => {
     const project = await ProjectSevice.getProjects();
     res.json(project)
 })
 
-app.post('/comments/add',async(req,res)=>{
-    const body: AddComentDto=req.body;
+app.post('/comments/add', async (req, res) => {
+    const body: AddComentDto = req.body;
     const comment = await CommentService.addComment(body)
-    res.json({status:200, message:"SUCCESS"})
+    res.json({ status: 200, message: "SUCCESS" })
 })
 
 app.listen(PORT, async () => {
