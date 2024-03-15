@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react'
 import './ProjDesc.css'
 import Comments from '../../components/Comments/Comments'
 import { useParams } from 'react-router-dom';
+import BarChart from '../../components/Histogram/BarChart';
+
 
 function ProjDesc() {
     const [projData,setProjData]=useState(null);
@@ -70,8 +72,8 @@ function ProjDesc() {
     const json=await response.json();
     if(json)
     {
-        console.log("comments Added")
-        window.location.reload()
+        console.log("comments Added");
+        window.location.reload();
     }
     }
 
@@ -101,6 +103,10 @@ function ProjDesc() {
             console.log(json);
             if(json)
             {
+                for(let i=0;i<json.length;i++)
+                {
+                    data.push(json[i].sentimentScore    )
+                }
                 setGetComments(json)
             }
     }
@@ -124,6 +130,7 @@ function ProjDesc() {
                     </div>
                 </div>
             </div>)}
+            <div>{data.length > 0&&(<BarChart data={data} />)}</div>
             <div className='addSeeComments'>
             <div className='addComments'>
             <input

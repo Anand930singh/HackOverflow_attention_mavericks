@@ -18,9 +18,6 @@ export class Projects{
     @Column()
     location:string;
 
-    // @OneToMany(()=>Comments,(comment)=>comment.commentid)
-    // comments:Comments[];
-
     @CreateDateColumn({ type: 'timestamp', default: () => 'CURRENT_TIMESTAMP' })
     createdon: Date;
 
