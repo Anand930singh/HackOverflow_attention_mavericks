@@ -1,0 +1,15 @@
+.comment {
+    max-width: 600px;
+    box-shadow: 1px 2px 3px 4px rgba(110, 114, 114, 0.2);
+    border-radius: 5px;
+    margin: 0 auto;
+    background-color: white;
+    margin-bottom: 2rem;
+    padding: 10px;
+    align-items: center;
+}
+
+.comment-content {
+    margin-bottom: 5px;
+}
+
