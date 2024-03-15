@@ -50,9 +50,9 @@
     width:31rem;
     display:flex;
     flex-direction: column;
-    justify-content: left;
+    justify-content: center;
 }
-.addComments input{
+.seeComments input{
     box-shadow: 1px 2px 3px 4px rgba(206, 208, 208, 0.2);
     border-radius: 5px;
     height:3rem;
@@ -62,8 +62,9 @@
 }
 .addSeeComments{
     display: flex;
-    flex-direction: row;
-    column-gap: 1rem;
+    flex-direction: column;
+    justify-content: center;
+    /* column-gap: 1rem; */
 }
 /* .seeComments{ */
     /* border-left:1px solid rgb(190, 189, 189);
