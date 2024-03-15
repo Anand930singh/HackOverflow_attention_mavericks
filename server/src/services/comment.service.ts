@@ -22,7 +22,7 @@ export class CommentService{
         comment.comment=body.comment;
         comment.projectId=body.projectId;
         comment.sentimentScore=body.sentimentScore;
-        comment.userid=string(body.userid);
+        comment.userid=body.userid;
         const savedComment= await commentRepository.save(comment);
         console.log(savedComment)
 

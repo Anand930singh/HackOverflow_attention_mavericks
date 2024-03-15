@@ -31,7 +31,7 @@ const AddProject = () => {
   };
 
   return (
-    <div className='formContainer'>
+  
     <div className="pr_form-container">
       <h2>Add New Project</h2>
       <form onSubmit={handleSubmit}>
@@ -75,7 +75,7 @@ const AddProject = () => {
         <button type="submit">Add Project</button>
       </form>
     </div>
-    </div>
+
   );
 }
 
