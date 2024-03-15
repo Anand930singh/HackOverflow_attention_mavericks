@@ -7,10 +7,10 @@ const { Entity, Column } = require("typeorm");
 export class AddComentDto{
     
     @Column()
-    projectId:Projects;
+    projectId:string;
 
     @Column()
-    userid:User;
+    userid:string;
 
     @Column()
     sentimentScore:number;

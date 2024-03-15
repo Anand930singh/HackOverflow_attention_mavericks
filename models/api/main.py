@@ -77,12 +77,13 @@ async def sentiment_analysis(example: dict):
     elif(neu>pos and neu>neg):
         tri_pred=0
         fin_score=int(neu*10)
+    fin_score=fin_score*tri_pred
     scores_dict = {
     'roberta_neg' : scores[0].tolist(),
     'roberta_neu' : scores[1].tolist(),
     'roberta_pos' : scores[2].tolist(),
-    'tri-pred' : tri_pred,
-    'fin-score' : fin_score
+    'tri_pred' : tri_pred,
+    'fin_score' : fin_score
     }
     return scores_dict
 

@@ -3,8 +3,11 @@ import { Column, Entity } from "typeorm";
 @Entity()
 export class LoginUserDto{
     @Column()
-    user:string;
+    email:string;
 
     @Column()
     password:string;
+
+    @Column()
+    type:number;
 }
