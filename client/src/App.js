@@ -10,8 +10,7 @@ import UpdateComment from './components/UpdateComment/UpdateComment'
 import UpdateProject from './components/UpdateProject/UpdateProject'
 import Cookies from "js-cookie";
 import Footer from './components/footer/Footer';
-import UpdateComment from'./components/UpdateComment/UpdateComment'
-import UpdateProject from'./components/UpdateProject/UpdateProject'
+
 
 
 function App() {
