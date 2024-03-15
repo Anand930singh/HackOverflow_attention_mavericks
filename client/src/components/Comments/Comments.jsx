@@ -10,11 +10,11 @@ const Comments = ({ user, comment, timestamp, onEdit, onDelete }) => {
     <div className="comment">
       <div className="user-info">
         <FaUser className="user-icon" />
-        <span className="username">username</span>
+        <span className="username">anonymous</span>
         <span className="timestamp">{new Date(timestamp).toLocaleString()}</span>
       </div>
       <div className="comment-content">
-        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Incidunt cupiditate error sit facere quaerat praesentium aspernatur commodi ea porro, ullam consequatur? Aliquam, fugiat. Id ipsam officia mollitia alias placeat eos.</p>
+        <p>{comment}</p>
       </div>
       <div className="comment-actions">
         {edit_comm && (<button className="edit-comment" onClick={onEdit}>

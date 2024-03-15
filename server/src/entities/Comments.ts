@@ -7,13 +7,11 @@ export class Comments{
     @PrimaryGeneratedColumn('uuid')
     commentid:string;
 
-    @OneToOne(()=>Projects)
-    @JoinColumn()
-    projectId:Projects;
+    @Column()
+    projectId:string;
 
-    @OneToOne(()=>User)
-    @JoinColumn()
-    userid:User;
+    @Column()
+    userid:string;
 
     @Column()
     sentimentScore:number;

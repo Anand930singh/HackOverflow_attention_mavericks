@@ -5,9 +5,23 @@ import ProjectCard from '../../components/ProjectCards/ProjectCard';
 
 function Home() {
     const [type,setType] = useState();
+    const [projects,setProjects]= useState([])
     const handleClick = () => {
         window.location.href = "/addProj";
       };
+
+      const getProj=async()=>{
+        const response= await fetch('http://localhost:8050/project/getProjects',{
+          method:"GET",
+          headers:{"Content-type":"application/json"},
+        })
+        const json=await response.json();
+        console.log(json);
+        if(json)
+        {
+          setProjects(json);
+        }
+      }
 
       useEffect(() => {
         const fetchData = async () => {
@@ -21,13 +35,20 @@ function Home() {
         };
     
         fetchData();
+        getProj();
       }, [type]);
 
   return (
     <div className='homeBody'>
         <div className='leftHomeBody'>
-            <ProjectCard/>
-            <ProjectCard/>
+        {projects.map(project => (
+                    <ProjectCard
+                        id={project.id}
+                        imgSrc={project.image}
+                        title={project.title}
+                        description={project.description}
+                    />
+                ))}
         </div>
         {type===1 && (<div className='rightHomeBody'>
             <div className='addProjectContainer' onClick={handleClick}>

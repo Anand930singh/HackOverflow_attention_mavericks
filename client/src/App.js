@@ -18,7 +18,7 @@ function App() {
           <Route path='/' element={<LoginSignup />}/>
           <Route exact path="/home" element={<Home />} />
           <Route path='/addProj' element={<AddProject />} />
-          <Route path='/projDesc' element={<ProjDesc />} />
+          <Route path='/projDesc/:id' element={<ProjDesc />} />
           <Route path='/updateComment' element={<UpdateComment />} />
           <Route path='/updateProject' element={<UpdateProject />} />
         </Routes>
