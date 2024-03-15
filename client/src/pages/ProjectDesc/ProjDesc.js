@@ -3,6 +3,7 @@ import './ProjDesc.css'
 import Comments from '../../components/Comments/Comments'
 import { useParams } from 'react-router-dom';
 import BarChart from '../../components/Histogram/BarChart';
+import PieChart from '../../components/PieChart/PieChart';
 
 
 function ProjDesc() {
@@ -11,6 +12,7 @@ function ProjDesc() {
     const [getComments,setGetComments]=useState([]);
     const {id} = useParams()
     const [data,setData]= useState([]);
+    const [classifi,setClassifi] = useState(['talk','talk','solu','solu','solu','uhy','uhy','uhy','uhy','x','y','z','g','y','f','a','b','c'])
     const [sentimentNum,setsentimentNum]=useState(1);
     const handleCommentChange = (e) => {
         setComments(e.target.value);
@@ -91,6 +93,10 @@ function ProjDesc() {
                 </div>
             </div>)}
             <div>{data.length > 0&&(<BarChart data={data} />)}</div>
+            <div className='pieChart'>
+                <PieChart data={classifi}/>
+                <PieChart data={classifi}/>
+            </div>
             <div className='addSeeComments'>
             <div className='addComments'>
             <input
