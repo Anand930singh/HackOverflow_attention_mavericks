@@ -41,19 +41,19 @@ async function connectDB() {
 }
 
 app.post('/auth/signup', async(req,res)=>{
-    const userData: UserRegistrationDto = req.body;
+    const userData: UserRegistrationDto = req.body.formData;
     const newUSer = await AuthService.signUp(userData);
     res.json(newUSer);
 })
 
 app.post('/auth/signin', async(req,res)=>{
-    const userData: LoginUserDto= req.body;
+    const userData: LoginUserDto= req.body.formData;
     const newUser = await AuthService.signIn(userData)
     res.json(newUser);
 })
 
 app.post('/project/add', async(req,res)=>{
-    const body: AddProjectDto= req.body;
+    const body: AddProjectDto= req.body.formData;
     const project = await ProjectSevice.addProject(body)
     res.json(project);
 })

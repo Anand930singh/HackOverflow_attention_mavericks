@@ -1,9 +1,11 @@
+//ProjectCard
 import React from 'react'
 import './ProjectCard.css'
+import '../../pages/ProjectDesc/ProjDesc'
 
 function ProjectCard() {
     return (
-        <div className='projectCardContainer'>
+        <div className='projectCardContainer' >
             <div className='imgProjCard'>
                 <img src="https://sabarmatiriverfront.com/wp-content/uploads/2022/08/Foot-Over-Bridge.jpeg" alt="not available" />
             </div>
@@ -18,3 +20,8 @@ function ProjectCard() {
 }
 
 export default ProjectCard
+
+
+
+
+
