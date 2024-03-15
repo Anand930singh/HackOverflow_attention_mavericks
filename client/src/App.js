@@ -5,6 +5,7 @@ import LoginSignup from './components/Authentication/LoginSignup'
 import Navbar from './components/Navbar/Navbar'
 import AddProject from './components/AddProject/AddProject';
 import ProjDesc from "./pages/ProjectDesc/ProjDesc";
+import Footer from './components/footer/Footer';
 import UpdateComment from'./components/UpdateComment/UpdateComment'
 import UpdateProject from'./components/UpdateProject/UpdateProject'
 
@@ -22,6 +23,7 @@ function App() {
           <Route path='/updateComment' element={<UpdateComment />} />
           <Route path='/updateProject' element={<UpdateProject />} />
         </Routes>
+     <Footer/>
       </BrowserRouter>
     </div>
 
