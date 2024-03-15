@@ -16,6 +16,8 @@ export class CommentService{
         comment.projectId=body.projectId;
         comment.sentimentScore=body.sentimentScore;
         comment.userid=body.userid;
+        comment.classification=body.classification;
+        comment.classificationTri=body.classificationTri;
         const savedComment= await commentRepository.create(comment);
 
         return commentRepository.save(savedComment);

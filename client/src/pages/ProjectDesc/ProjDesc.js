@@ -3,16 +3,16 @@ import './ProjDesc.css'
 import Comments from '../../components/Comments/Comments'
 import { useParams } from 'react-router-dom';
 import BarChart from '../../components/Histogram/BarChart';
+import PieChart from '../../components/PieChart/PieChart';
 
 
 function ProjDesc() {
     const [projData,setProjData]=useState(null);
     const [comments,setComments]= useState('');
-    const [predclass,setPredclass]= useState('');
     const [getComments,setGetComments]=useState([]);
     const {id} = useParams()
-    const [userId,setUserId]= useState();
-    const [sentimentNum,setsentimentNum]=useState(0);
+    const [data,setData]= useState([]);
+    const [classificationData,setClassificationData]= useState([]);
     const handleCommentChange = (e) => {
         setComments(e.target.value);
     };
@@ -20,7 +20,6 @@ function ProjDesc() {
         const requestData = {
             requestBody: comments
           };
-        console.log(requestData,'requestData')
         const requestBody = JSON.stringify(requestData);    
         const fastApiSentimentResponse = await fetch('http://localhost:8000/sentiment_analysis', {
           method: 'POST',
@@ -29,9 +28,7 @@ function ProjDesc() {
           },
           body: requestBody
         });
-        console.log('hihi');
         const SentimentData = await fastApiSentimentResponse.json();
-        console.log(SentimentData.fin_score,'jwgds')
         return SentimentData.fin_score;
       };
       const text_classification=async(comments)=>{
@@ -47,18 +44,13 @@ function ProjDesc() {
           body: requestBody
         });
         const Classification_data = await fastApiClassResponse.json();
-        console.log(Classification_data.issue1,'wheiu')
         return Classification_data
       }
     const addComment=async()=>{
         let value = await localStorage.getItem('userData');
         const sentimentScore=await calculate_sentiment(comments);
         const issue_class=await text_classification(comments);
-        console.log(sentimentScore,'fromxyz')
-        console.log(issue_class.issue1,'textClass')
         value = JSON.parse(value);  
-        console.log(value)
-
         const response= await fetch('http://localhost:8050/comments/add',{
       method:"POST",
       body:JSON.stringify({
@@ -66,13 +58,14 @@ function ProjDesc() {
         userid:value.userId,
         sentimentScore:sentimentScore,
         comment:comments,
+        classification:issue_class.issue1,
+        classificationTri:1
       }),
       headers:{"Content-type":"application/json"},
     })
     const json=await response.json();
     if(json)
     {
-        console.log("comments Added");
         window.location.reload();
     }
     }
@@ -100,12 +93,12 @@ function ProjDesc() {
             headers:{"Content-type":"application/json"},
             })
             const json=await response.json();
-            console.log(json);
             if(json)
             {
                 for(let i=0;i<json.length;i++)
                 {
-                    data.push(json[i].sentimentScore    )
+                    data.push(json[i].sentimentScore)
+                    classificationData.push(json[i].classification);
                 }
                 setGetComments(json)
             }
@@ -131,6 +124,9 @@ function ProjDesc() {
                 </div>
             </div>)}
             <div>{data.length > 0&&(<BarChart data={data} />)}</div>
+            <div className='pieChart'>
+                {classificationData.length>0 && (<PieChart data={classificationData}/>)}
+            </div>
             <div className='addSeeComments'>
             <div className='addComments'>
             <input

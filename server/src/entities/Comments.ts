@@ -19,6 +19,12 @@ export class Comments{
     @Column()
     comment:string;
 
+    @Column()
+    classification:string;
+
+    @Column()
+    classificationTri:number;
+
     @CreateDateColumn({ type: 'timestamp', default: () => 'CURRENT_TIMESTAMP' })
     createdon: Date;
 

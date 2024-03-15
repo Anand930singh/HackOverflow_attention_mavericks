@@ -65,11 +65,6 @@
     flex-direction: row;
     column-gap: 1rem;
 }
-/* .seeComments{ */
-    /* border-left:1px solid rgb(190, 189, 189);
-    padding-left:0.5rem; */
-/* } */
-
 @media (max-width: 800px) {
     .addSeeComments{
         flex-direction: column;
@@ -89,4 +84,9 @@
     padding: 0.3rem;
     font-weight: 700;
     border-radius: 5px;
+}
+.pieChart{
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
 }

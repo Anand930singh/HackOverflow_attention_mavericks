@@ -1,6 +1,5 @@
 import pandas as pd
 import numpy as np
-import nltk
 import os
 from nltk.sentiment import SentimentIntensityAnalyzer
 from tqdm.notebook import tqdm
@@ -13,6 +12,9 @@ from dotenv import load_dotenv
 import openai
 import json
 import requests
+import nltk
+nltk.download('vader_lexicon')
+nltk.download('punkt')
 load_dotenv()
 # import google.generativeai as genai
 from openai import OpenAI
