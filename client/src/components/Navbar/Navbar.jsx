@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 import menu_image from '../Assets/menu.png'
 const Navbar = () => {
 
-    const [menu, setMenu] = useState("hacker1");
+    const [menu, setMenu] = useState("home");
     const [maxHeight, setMaxHeight] = useState("0px");
 
     const toggleMenu = () => {
@@ -19,10 +19,10 @@ const Navbar = () => {
             </div>
             <div className='nav-logo'>
                 <img src={logo} alt="logo" />
-                <p>Hackers</p>
+                <p>Attention Mavericks</p>
             </div>
             <ul className="nav-menu" id="MenuItems" style={{ maxHeight: maxHeight }}>
-                <li onClick={() => { setMenu("hacker1") }}><Link style={{textDecoration:'none'}}to='/'>Hacker1 </Link>{menu === "hacker1" ? <hr /> : <></>}</li>
+                <li onClick={() => { setMenu("home") }}><Link style={{textDecoration:'none'}}to='/home'>Home </Link>{menu === "home" ? <hr /> : <></>}</li>
                 <li onClick={() => { setMenu("hacker2") }}><Link style={{textDecoration:'none'}} to='/hacker2 '>Hacker2</Link> {menu === "hacker2" ? <hr /> : <></>}</li>
             </ul>
             <div className='nav-login'>

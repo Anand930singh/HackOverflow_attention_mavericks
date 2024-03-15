@@ -3,15 +3,20 @@
     background-color: rgb(243, 243, 243);
     display: flex;
     justify-content: center;
-    padding: 1rem 0rem;
+    
+    margin:auto;
   }
   .pr_form-container {
     max-width: 500px;
-    padding: 20px;
+
+    padding: 1rem 2rem 1rem 1rem;
     display:flex;
     flex-direction: column;
     border-radius: 5px;
     background-color:white;
+    
+    margin:0rem auto;
+    margin-top:2rem;
     box-shadow: 1px 2px 3px 4px rgba(206, 208, 208, 0.2);
   }
   
