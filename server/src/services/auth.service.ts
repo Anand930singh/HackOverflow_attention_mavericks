@@ -17,14 +17,27 @@ export class AuthService{
 
     static async signIn(body:LoginUserDto):Promise<any>{
         const myDataSource=AppSataSource;
-       const user= await myDataSource.getRepository(User).findOne({where:{user:body.user}});
+        const user= await myDataSource.getRepository(User).findOne({where:{email:body.email}});
         if(user)
         {
-            const isMatch = await bcrypt.compare(body.password, user.password);
-            if(isMatch){
-                return{
-                    status:200,
-                    message:"SUCCESS"
+          const isMatch = await bcrypt.compare(body.password, user.password);
+          if(isMatch){
+                if(user.type===body.type){              
+                  return{
+                      status:200,
+                      data:{
+                        userId:user.id,
+                        type:user.type
+                      }
+                  }
+                }
+                else{
+                  return {
+                    status: 400,
+                    data: {
+                      message: "User not found",
+                    },
+                  };
                 }
             }
             else{
