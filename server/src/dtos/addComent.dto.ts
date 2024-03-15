@@ -18,4 +18,10 @@ export class AddComentDto{
     @Column()
     comment:string;
 
+    @Column()
+    classification:string;
+
+    @Column()
+    classificationTri:number;
+
 }

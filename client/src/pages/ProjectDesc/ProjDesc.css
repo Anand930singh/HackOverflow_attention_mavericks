@@ -100,3 +100,8 @@
     font-weight: 700;
     border-radius: 5px;
 }
+.pieChart{
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+}
