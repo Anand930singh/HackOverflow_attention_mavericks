@@ -5,6 +5,7 @@ import LoginSignup from './components/Authentication/LoginSignup'
 import Navbar from './components/Navbar/Navbar'
 import AddProject from './components/AddProject/AddProject';
 import ProjDesc from "./pages/ProjectDesc/ProjDesc";
+import Footer from './components/footer/Footer';
 
 
 function App() {
@@ -17,7 +18,10 @@ function App() {
           <Route path='/loginSignup' element={<LoginSignup />} />
           <Route path='/addProj' element={<AddProject />} />
           <Route path='/projDesc' element={<ProjDesc />} />
+          
+            
         </Routes>
+     <Footer/>
       </BrowserRouter>
     </div>
 
