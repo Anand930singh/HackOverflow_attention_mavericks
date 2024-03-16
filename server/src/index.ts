@@ -9,6 +9,8 @@ import { AddProjectDto } from "./dtos/addProject.dto";
 import { ProjectSevice } from "./services/project.service";
 import { AddComentDto } from "./dtos/addComent.dto";
 import { CommentService } from "./services/comment.service";
+import { AddProjUpdateDto } from "./dtos/addProjUpdate.dto";
+import { UpdateProj } from "./services/projUpdate.service";
 
 
 const app = express();
@@ -70,7 +72,6 @@ app.post('/project/getById', async (req, res) => {
 })
 
 app.post('/comments/add', async (req, res) => {
-    console.log(req.body, " HIIIIIIIIIIII")
     const body: AddComentDto = req.body;
     const comment = await CommentService.addComment(body)
     res.json({ status: 200, message: "SUCCESS" })
@@ -81,6 +82,18 @@ app.post('/comments/getById', async (req, res) => {
     console.log(id)
     const comments = await CommentService.getCommentsById(id);
     res.json(comments);
+})
+
+app.post('/updateProj/add',async(req,res)=>{
+    const body: AddProjUpdateDto=req.body.formData;
+    const data= await UpdateProj.addUpdateProj(body);
+    res.json(data);
+})
+
+app.post('/updateProj/getUpdate',async(req,res)=>{
+    const id= req.body.id;
+    const data= await UpdateProj.getUpdateById(id);
+    res.json(data);
 })
 
 app.listen(PORT, async () => {
