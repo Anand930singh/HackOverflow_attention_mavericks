@@ -20,7 +20,7 @@ function ProjectCard(props) {
     return (
         <div className='projectCardContainer' onClick={handleProject} >
             <div className='imgProjCard'>
-                <img src="https://sabarmatiriverfront.com/wp-content/uploads/2022/08/Foot-Over-Bridge.jpeg" alt="not available" />
+                <img src="https://img.staticmb.com/mbcontent/images/crop/uploads/2024/2/infrastructure-projects-in-India_0_1200.jpg" />
             </div>
             <div className='projectDesHead'>
                 <div className='projHead'>{title}</div>
