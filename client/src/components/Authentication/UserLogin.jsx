@@ -33,12 +33,14 @@ function UserLogin() {
   const handelUserLogin = async () => {
     const response = await fetch('http://localhost:8050/auth/signin', {
       method: "POST",
-      body: JSON.stringify(formData), // Send formData directly
+      body: JSON.stringify({formData}), 
       headers: { "Content-type": "application/json" },
     });
     const json = await response.json();
     if (json) {
+      console.log(json,'json')
       const userData = { userId: json.data.userId, type: json.data.type };
+      console.log(userData,'userData');
       localStorage.setItem('userData', JSON.stringify(userData));
       navigate('/home');
     }
