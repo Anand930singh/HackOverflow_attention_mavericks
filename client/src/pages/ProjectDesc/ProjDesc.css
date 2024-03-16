@@ -105,3 +105,7 @@
     flex-direction: row;
     justify-content: center;
 }
+.updates{
+    display: flex;
+    row-gap:5px;
+}

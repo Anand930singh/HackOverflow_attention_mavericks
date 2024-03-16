@@ -1,17 +1,20 @@
 import React,{useState} from 'react'
 import './UpdateProject.css'
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 const UpdateProject = () => {
     const navigate = useNavigate();
+    const { id } = useParams()
+
     const [formData, setFormData]=useState({
-        projectDescription:'',
+        projectId:id,
+        update:''
     })
 
     const handleDescriptionChange = (e) => {
         const { value } = e.target;
         if (value.length <= 500) {
-          setFormData({ ...formData, projectDescription: value });
+          setFormData({ ...formData, update: value });
         }
     };
 
@@ -20,7 +23,8 @@ const UpdateProject = () => {
       };
 
       const handleAddUpdate=async()=>{
-        const response= await fetch('http://localhost:8050/project/add',{
+
+        const response= await fetch('http://localhost:8050/updateProj/add',{
           method:"POST",
           body:JSON.stringify({
             formData
@@ -28,9 +32,10 @@ const UpdateProject = () => {
           headers:{"Content-type":"application/json"},
         })
         const json=await response.json();
+        console.log(json);
         if(json)
         {
-          navigate('/home');
+          window.location.reload();
         }
       }
     
@@ -42,14 +47,14 @@ const UpdateProject = () => {
         <div className="pr_form-group">
           <label>Write updated project description in maximum 500 letters:</label>
           <textarea
-            name="projectDescription"
-            value={formData.projectDescription}
+            name="update"
+            value={formData.update}
             onChange={handleDescriptionChange}
             maxLength={500}
             rows={5}
             required
           />
-          <p className="word-limit">{500 - formData.projectDescription.length} letters remaining</p>
+          <p className="word-limit">{500 - formData.update.length} letters remaining</p>
         </div>
         <button type="submit" onClick={handleAddUpdate}>Add Project</button>
       </form>
